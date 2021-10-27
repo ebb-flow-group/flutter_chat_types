@@ -7,10 +7,10 @@ import 'util.dart';
 /// All possible room types
 enum RoomType { channel, direct, group, unsupported }
 
-/// Extension with one [toShortString] method
+/// Extension with one [toSShortString] method
 extension RoomTypeToShortString on RoomType {
   /// Converts enum to the string equal to enum's name
-  String toShortString() {
+  String toSShortString() {
     return toString().split('.').last;
   }
 }
@@ -59,7 +59,7 @@ class Room extends Equatable {
         'lastMessages': lastMessages?.map((e) => e.toJson()).toList(),
         'metadata': metadata,
         'name': name,
-        'type': type.toShortString(),
+        'type': type.toSShortString(),
         'updatedAt': updatedAt,
         'users': users.map((e) => e.toJson()).toList(),
         'userIds': userIds.map((e) => e).toList(),
