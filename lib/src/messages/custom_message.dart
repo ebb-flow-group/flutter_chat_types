@@ -59,7 +59,7 @@ class CustomMessage extends Message {
         json['metadata'] as Map<String, dynamic>?,
         json['roomId'] as String?,
         getStatusFromString(json['status'] as String?),
-        MessageType.file,
+        MessageType.custom,
         json['updatedAt'] as int?,
       );
 
@@ -72,7 +72,7 @@ class CustomMessage extends Message {
     'metadata': metadata,
     'roomId': roomId,
     'status': status?.toShortString(),
-    'type': MessageType.file.toShortString(),
+    'type': MessageType.custom.toShortString(),
     'updatedAt': updatedAt,
   };
 
